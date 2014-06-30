@@ -1,0 +1,17 @@
+<h1>Hey!</h1>
+
+<%= form_for(@tweet, :url => '/tweets') do |f| %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <br/><br/>
+
+  <%= f.label :user_id %>
+  <%= f.select :user_id, @handles %>
+
+  <br/><br/>
+
+  <%= f.submit "NO ITS A SUBMIT BUTTON!!!!" %>
+
+<% end %>
