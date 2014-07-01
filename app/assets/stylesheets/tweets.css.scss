@@ -1,0 +1,24 @@
+#new_tweet_row {
+  text-align: center;
+}
+
+#tweets_list {
+  ul {
+    padding-left: 0px;
+
+    li {
+      list-style-type: none;
+      padding: 5px;
+      font-size: 20px;
+    }
+  }
+
+  a {
+    color: #E51880;
+    text-decoration: none;
+  }
+
+  h1, p, li, td, tr {
+    color: #615151;
+  }
+}

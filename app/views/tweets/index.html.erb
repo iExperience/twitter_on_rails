@@ -1,19 +1,16 @@
+<div id="new_tweet_row">
+  <%=link_to '+ New Tweet', new_tweet_path, :class => 'rounded-button' %>
+</div>
+
 <div id="tweets_list">
 <ul>
 <% @tweets.each do |tweet| %>
 
   <li>
-    <%= link_to tweet.user.handle, "http://twitter.com/#{tweet.user.handle}", :target => "_blank" %>: 
+    <%= link_to "@#{tweet.user.handle}", "http://twitter.com/#{tweet.user.handle}", :target => "_blank" %>: 
     <%= tweet.body %>
   </li>
 
 <% end %>
 </ul>
-
-<br/>
-
-<%=link_to 'New Tweet', new_tweet_path, :class => 'rounded-button' %>
-
-<br/><br/>
-
 </div>
