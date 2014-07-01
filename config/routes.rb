@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'tweets/new' => 'tweets#new'
+  # get 'tweets' => 'tweets#index'
+  # post 'tweets' => 'tweets#create'
+  # get 'tweets/new' => 'tweets#new'
 
-  #resources :tweets, :only => [:new]
+  resources :tweets, :only => [:index, :create, :new]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

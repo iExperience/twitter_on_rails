@@ -1,6 +1,6 @@
 <h1>Hey!</h1>
 
-<%= form_for(@tweet, :url => '/tweets') do |f| %>
+<%= form_for(@tweet, :url => tweets_path) do |f| %>
 
   <%= f.label :body %>
   <%= f.text_field :body %>
@@ -12,6 +12,6 @@
 
   <br/><br/>
 
-  <%= f.submit "NO ITS A SUBMIT BUTTON!!!!" %>
+  <%= f.submit %>
 
 <% end %>
