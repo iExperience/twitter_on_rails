@@ -8,7 +8,21 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+
+  <div class="header">
+    <%= image_tag 'ix.png' %>
+  </div>
+
+  <%= yield %>
+
+  <div class="footer">
+    <%=link_to 'Home', "http://iexperience.co.za" %>
+    | <%=mail_to "aaron@iexperience.co.za", "Contact" %>
+    | <%=link_to 'About', 'http://iexperience.co.za/#row2' %>
+  </div>
+
+</div>
 
 </body>
 </html>

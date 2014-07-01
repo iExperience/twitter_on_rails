@@ -1,5 +1,4 @@
-<h1>Tweets List</h1>
-
+<div id="tweets_list">
 <ul>
 <% @tweets.each do |tweet| %>
 
@@ -10,3 +9,11 @@
 
 <% end %>
 </ul>
+
+<br/>
+
+<%=link_to 'New Tweet', new_tweet_path, :class => 'rounded-button' %>
+
+<br/><br/>
+
+</div>
