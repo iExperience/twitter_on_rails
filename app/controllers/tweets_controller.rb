@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :authenticate_user!, :only => [:new, :create]
 
   def index
     @tweets = Tweet.all
@@ -10,9 +11,9 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.new(tweet_params)
+    @tweet = Tweet.new(tweet_params.merge({:user_id => current_user.id}))
     if @tweet.save
-      redirect_to :action => :index  
+      redirect_to tweets_path
     else
       set_handles
       render :new
@@ -22,7 +23,7 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.require(:tweet).permit(:body, :user_id)
+    params.require(:tweet).permit(:body)
   end
 
   def set_handles
