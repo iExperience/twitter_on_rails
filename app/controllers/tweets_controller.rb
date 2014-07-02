@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!, :only => [:new, :create]
+  before_action :authenticate_user!, :except => [:index]
+  before_action :authenticate_admin!, :only => [:destroy]
 
   def index
     @tweets = Tweet.all
@@ -20,6 +21,13 @@ class TweetsController < ApplicationController
     end
   end
 
+  def destroy
+    @tweet = Tweet.find(params[:id])
+    @tweet.destroy
+
+    redirect_to tweets_path
+  end
+
   private
 
   def tweet_params
@@ -30,4 +38,5 @@ class TweetsController < ApplicationController
     @handles = {}
     User.all.each { |user| @handles[user.handle] = user.id }
   end
+
 end

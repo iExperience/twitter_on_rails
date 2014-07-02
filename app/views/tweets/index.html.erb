@@ -7,6 +7,10 @@
 <% @tweets.each do |tweet| %>
 
   <li>
+    <% if user_signed_in? && current_user.role == "admin" %>
+      <%= link_to image_tag("recycle.png", :class => "trash_button"), tweet_path(tweet), :method => :delete %>
+    <% end %>
+
     <%= link_to "@#{tweet.user.handle}", "http://twitter.com/#{tweet.user.handle}", :target => "_blank" %>: 
     <%= tweet.body %>
   </li>

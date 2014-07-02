@@ -10,6 +10,13 @@
       list-style-type: none;
       padding: 5px;
       font-size: 20px;
+
+      a img.trash_button {
+        width: 24px;
+        height: 24px;
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 
@@ -21,4 +28,8 @@
   h1, p, li, td, tr {
     color: #615151;
   }
+}
+
+#new_tweet_row {
+  margin: 20px auto;
 }
